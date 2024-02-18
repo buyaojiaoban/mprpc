@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package boozeban;
+
+option cc_generic_services = true;
+
+message ResultCode
+{
+    int32 errcode = 1;
+    bytes errmsg = 2;
+}
+
+message GetFriendsListRequest // 这个就相当于函数的参数类型
+{
+    uint32 userid = 1;
+}
+
+message GetFriendsListResponse // 这个就相当于函数的返回值类型
+{
+    ResultCode result = 1;
+    repeated bytes friends = 2;
+}
+
+
+// 好友模块
+service FriendServiceRpc
+{
+    rpc GetFriendsList(GetFriendsListRequest) returns(GetFriendsListResponse); // rpc方法的描述
+}
