@@ -1,0 +1,2 @@
+21:31:41 >= first log message!
+21:31:41 >= /home/rbook/mprpc/example/callee/friendservice.cc:main:45
